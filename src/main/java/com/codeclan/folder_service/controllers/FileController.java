@@ -21,12 +21,12 @@ public class FileController {
     }
 
     @GetMapping(value = "/files/{id}")
-    public ResponseEntity getPirate(@PathVariable Long id){
+    public ResponseEntity getFile(@PathVariable Long id){
         return new ResponseEntity<>(fileRepo.findById(id), HttpStatus.OK);
     }
 
     @PostMapping(value = "/files")
-    public ResponseEntity<File> postPirate(@RequestBody File file) {
+    public ResponseEntity<File> postFile(@RequestBody File file) {
         return new ResponseEntity<>(fileRepo.save(file), HttpStatus.CREATED);
     }
 
