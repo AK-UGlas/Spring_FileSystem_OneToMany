@@ -51,5 +51,9 @@ public class User {
     public void setDirList(List<Folder> dirList) {
         this.dirList = dirList;
     }
+
+    public void addFolder(Folder folder) {
+        dirList.add(folder);
+    }
 }
 
