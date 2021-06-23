@@ -20,14 +20,14 @@ public class File {
     private String extension;
 
     @Column(name = "size")
-    private Long size;
+    private double size; //keep it to KB
 
     @ManyToOne
     @JoinColumn(name = "folder_id", nullable = false)
     @JsonIgnoreProperties({"files"})
     private Folder folder;
 
-    public File(String name, String extension, Long size, Folder folder) {
+    public File(String name, String extension, double size, Folder folder) {
         this.name = name;
         this.extension = extension;
         this.size = size;
@@ -61,7 +61,7 @@ public class File {
         this.extension = extension;
     }
 
-    public Long getSize() {
+    public double getSize() {
         return size;
     }
 
